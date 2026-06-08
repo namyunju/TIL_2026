@@ -19,6 +19,10 @@ else
 
 EOF
   echo "생성: $FILE"
+
+  # README 날짜 목록에 링크 추가
+  sed -i "s|<!-- 최신순 -->|<!-- 최신순 -->\n- [$DATE]($FILE)|" README.md
+  echo "README.md 업데이트 완료"
 fi
 
 code "$FILE"
